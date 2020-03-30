@@ -1,0 +1,709 @@
+{
+  "meta": {
+    "delta_last_id": "11ea-7104-d90fc8b0-8375-c602f7df2a12"
+  },
+  "events": [
+    {
+      "event_id": "4b100cf2eeac0b1f7be86096e68dcb0e",
+      "sport_id": 2,
+      "event_date": "2019-09-22T17:00:00Z",
+      "score": {
+        "event_id": "4b100cf2eeac0b1f7be86096e68dcb0e",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 66,
+          "name": "Cincinnati",
+          "mascot": "Bengals",
+          "abbreviation": "CIN",
+          "ranking": 0,
+          "record": "2-14",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 61,
+          "name": "Buffalo",
+          "mascot": "Bills",
+          "abbreviation": "BUF",
+          "ranking": 0,
+          "record": "10-6",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "Cincinnati at Buffalo - 2019-09-22",
+        "attendance": "69448"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "00e3d2718fe28d22483f1feb259f4a27",
+      "sport_id": 2,
+      "event_date": "2019-09-22T17:00:00Z",
+      "score": {
+        "event_id": "00e3d2718fe28d22483f1feb259f4a27",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 62,
+          "name": "Miami",
+          "mascot": "Dolphins",
+          "abbreviation": "MIA",
+          "ranking": 0,
+          "record": "5-11",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 77,
+          "name": "Dallas",
+          "mascot": "Cowboys",
+          "abbreviation": "DAL",
+          "ranking": 0,
+          "record": "8-8",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "Miami at Dallas - 2019-09-22",
+        "attendance": "90127"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "5bce546215576676f144e1289f8c660e",
+      "sport_id": 2,
+      "event_date": "2019-09-22T17:00:00Z",
+      "score": {
+        "event_id": "5bce546215576676f144e1289f8c660e",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 73,
+          "name": "Denver",
+          "mascot": "Broncos",
+          "abbreviation": "DEN",
+          "ranking": 0,
+          "record": "7-9",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 83,
+          "name": "Green Bay",
+          "mascot": "Packers",
+          "abbreviation": "GB",
+          "ranking": 0,
+          "record": "13-3",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "Denver at Green Bay - 2019-09-22",
+        "attendance": "78078"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "b5cbbabae6324e9bd57cc1cba916f97c",
+      "sport_id": 2,
+      "event_date": "2019-09-22T17:00:00Z",
+      "score": {
+        "event_id": "b5cbbabae6324e9bd57cc1cba916f97c",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 85,
+          "name": "Atlanta",
+          "mascot": "Falcons",
+          "abbreviation": "ATL",
+          "ranking": 0,
+          "record": "7-9",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 70,
+          "name": "Indianapolis",
+          "mascot": "Colts",
+          "abbreviation": "IND",
+          "ranking": 0,
+          "record": "7-9",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "Atlanta at Indianapolis - 2019-09-22",
+        "attendance": "60295"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "8b18dc73180f771d8e5904194965ae4b",
+      "sport_id": 2,
+      "event_date": "2019-09-22T17:00:00Z",
+      "score": {
+        "event_id": "8b18dc73180f771d8e5904194965ae4b",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 65,
+          "name": "Baltimore",
+          "mascot": "Ravens",
+          "abbreviation": "BAL",
+          "ranking": 0,
+          "record": "14-2",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 74,
+          "name": "Kansas City",
+          "mascot": "Chiefs",
+          "abbreviation": "KC",
+          "ranking": 0,
+          "record": "12-4",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "Baltimore at Kansas City - 2019-09-22",
+        "attendance": "73390"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "dab337cb976615dcfda5fb68e381f586",
+      "sport_id": 2,
+      "event_date": "2019-09-22T17:00:00Z",
+      "score": {
+        "event_id": "dab337cb976615dcfda5fb68e381f586",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 75,
+          "name": "Oakland",
+          "mascot": "Raiders",
+          "abbreviation": "OAK",
+          "ranking": 0,
+          "record": "7-9",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 84,
+          "name": "Minnesota",
+          "mascot": "Vikings",
+          "abbreviation": "MIN",
+          "ranking": 0,
+          "record": "10-6",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "Oakland at Minnesota - 2019-09-22",
+        "attendance": "66738"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "af10a8623a5f98cf4be3303727ee0885",
+      "sport_id": 2,
+      "event_date": "2019-09-22T17:00:00Z",
+      "score": {
+        "event_id": "af10a8623a5f98cf4be3303727ee0885",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 64,
+          "name": "New York",
+          "mascot": "Jets",
+          "abbreviation": "NYJ",
+          "ranking": 0,
+          "record": "7-9",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 63,
+          "name": "New England",
+          "mascot": "Patriots",
+          "abbreviation": "NE",
+          "ranking": 0,
+          "record": "12-4",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "New York at New England - 2019-09-22",
+        "attendance": "65878"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "9755956deae15e93cca0512ef47cdd6e",
+      "sport_id": 2,
+      "event_date": "2019-09-22T17:00:00Z",
+      "score": {
+        "event_id": "9755956deae15e93cca0512ef47cdd6e",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 82,
+          "name": "Detroit",
+          "mascot": "Lions",
+          "abbreviation": "DET",
+          "ranking": 0,
+          "record": "3-12-1",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 79,
+          "name": "Philadelphia",
+          "mascot": "Eagles",
+          "abbreviation": "PHI",
+          "ranking": 0,
+          "record": "9-7",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "Detroit at Philadelphia - 2019-09-22",
+        "attendance": "69796"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "365198bbbbe1dd8e5c8cbd6f23ae0a0a",
+      "sport_id": 2,
+      "event_date": "2019-09-22T20:05:00Z",
+      "score": {
+        "event_id": "365198bbbbe1dd8e5c8cbd6f23ae0a0a",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 86,
+          "name": "Carolina",
+          "mascot": "Panthers",
+          "abbreviation": "CAR",
+          "ranking": 0,
+          "record": "5-11",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 89,
+          "name": "Arizona",
+          "mascot": "Cardinals",
+          "abbreviation": "ARI",
+          "ranking": 0,
+          "record": "5-10-1",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "Carolina at Arizona - 2019-09-22",
+        "attendance": "60104"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "546994650a19b34ba4067d67ac42fb40",
+      "sport_id": 2,
+      "event_date": "2019-09-22T20:05:00Z",
+      "score": {
+        "event_id": "546994650a19b34ba4067d67ac42fb40",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 78,
+          "name": "New York",
+          "mascot": "Giants",
+          "abbreviation": "NYG",
+          "ranking": 0,
+          "record": "4-12",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 88,
+          "name": "Tampa Bay",
+          "mascot": "Buccaneers",
+          "abbreviation": "TB",
+          "ranking": 0,
+          "record": "7-9",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "New York at Tampa Bay - 2019-09-22",
+        "attendance": "55070"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "c6e8dbdd37eb8aaa1e82844cc6f39478",
+      "sport_id": 2,
+      "event_date": "2019-09-22T20:25:00Z",
+      "score": {
+        "event_id": "c6e8dbdd37eb8aaa1e82844cc6f39478",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 69,
+          "name": "Houston",
+          "mascot": "Texans",
+          "abbreviation": "HOU",
+          "ranking": 0,
+          "record": "10-6",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 76,
+          "name": "Los Angeles",
+          "mascot": "Chargers",
+          "abbreviation": "LAC",
+          "ranking": 0,
+          "record": "5-11",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "Houston at Los Angeles - 2019-09-22",
+        "attendance": "25349"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "d07a0b0c111e2896e593d0d28557e34f",
+      "sport_id": 2,
+      "event_date": "2019-09-22T20:25:00Z",
+      "score": {
+        "event_id": "d07a0b0c111e2896e593d0d28557e34f",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 68,
+          "name": "Pittsburgh",
+          "mascot": "Steelers",
+          "abbreviation": "PIT",
+          "ranking": 0,
+          "record": "8-8",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 91,
+          "name": "San Francisco",
+          "mascot": "49ers",
+          "abbreviation": "SF",
+          "ranking": 0,
+          "record": "13-3",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "Pittsburgh at San Francisco - 2019-09-22",
+        "attendance": "69439"
+      },
+      "line_periods": {}
+    },
+    {
+      "event_id": "f2f74062c0e4b03e5d4cc2d3965c5322",
+      "sport_id": 2,
+      "event_date": "2019-09-22T20:25:00Z",
+      "score": {
+        "event_id": "f2f74062c0e4b03e5d4cc2d3965c5322",
+        "event_status": "STATUS_SCHEDULED",
+        "score_away": 0,
+        "score_home": 0,
+        "winner_away": 0,
+        "winner_home": 0,
+        "score_away_by_period": [],
+        "score_home_by_period": [],
+        "venue_name": "",
+        "venue_location": "",
+        "game_clock": 0,
+        "display_clock": "0:00",
+        "game_period": 0,
+        "broadcast": "",
+        "event_status_detail": ""
+      },
+      "teams_normalized": [
+        {
+          "team_id": 87,
+          "name": "New Orleans",
+          "mascot": "Saints",
+          "abbreviation": "NO",
+          "ranking": 0,
+          "record": "13-3",
+          "is_away": true,
+          "is_home": false
+        },
+        {
+          "team_id": 92,
+          "name": "Seattle",
+          "mascot": "Seahawks",
+          "abbreviation": "SEA",
+          "ranking": 0,
+          "record": "11-5",
+          "is_away": false,
+          "is_home": true
+        }
+      ],
+      "schedule": {
+        "season_type": "Regular Season",
+        "season_year": 2019,
+        "week": 3,
+        "week_name": "Week 3",
+        "week_detail": "Sep 18-24",
+        "event_name": "New Orleans at Seattle - 2019-09-22",
+        "attendance": "69005"
+      },
+      "line_periods": {}
+    }
+  ]
+}
