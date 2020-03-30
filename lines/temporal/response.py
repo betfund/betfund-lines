@@ -7,7 +7,7 @@ class TemporalClientResponse(object):
 
     @abstractmethod
     def __call__(self):
-        raise NotImplemented("this-should-be-implemented")
+        raise NotImplementedError("this-should-be-implemented")
 
 
 class TemporalClientSuccess(TemporalClientResponse):
