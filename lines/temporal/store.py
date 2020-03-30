@@ -17,7 +17,9 @@ class BetFundTemporalClient(object):  # pragma: no cover
 
     def __init__(self):
         """Constructor for BetFundTemporalClient."""
-        self.loc = os.path.expanduser("betfund/temporal/testDatastore/test.json")
+        self.loc = os.path.expanduser(
+            "betfund/temporal/testDatastore/test.json"
+        )
         self.db = self.load()
 
     def load(self) -> dict:
@@ -50,14 +52,18 @@ class BetFundTemporalClient(object):  # pragma: no cover
                 self.db.get(record.get("key").get("eventId")).append(record)
 
                 _LOGGER.info(
-                    "PUT: UPDATE - eventId: {}".format(record["key"].get("eventId"))
+                    "PUT: UPDATE - eventId: {}".format(
+                        record["key"].get("eventId")
+                    )
                 )
 
                 self.dump()
 
             except Exception:
                 _LOGGER.error(
-                    "PUT: FAILURE - eventId: {}".format(record["key"].get("eventId"))
+                    "PUT: FAILURE - eventId: {}".format(
+                        record["key"].get("eventId")
+                    )
                 )
                 return TemporalClientFailure()
 
@@ -65,13 +71,19 @@ class BetFundTemporalClient(object):  # pragma: no cover
 
         try:
             self.db[record.get("key").get("eventId")] = [record]
-            _LOGGER.info("PUT: NEW - eventId: {}".format(record["key"].get("eventId")))
+            _LOGGER.info(
+                "PUT: NEW - eventId: {}".format(
+                    record["key"].get("eventId")
+                )
+            )
 
             self.dump()
 
         except Exception:
             _LOGGER.error(
-                "PUT: FAILURE - eventId: {}".format(record["key"].get("eve`ntId"))
+                "PUT: FAILURE - eventId: {}".format(
+                    record["key"].get("eve`ntId")
+                )
             )
             return TemporalClientFailure()
 
@@ -98,7 +110,9 @@ class BetFundTemporalClient(object):  # pragma: no cover
         """
         if not isinstance(key, dict):
             raise ValueError(
-                "The provided key is invalid: {}".format(json.dumps(key, indent=4))
+                "The provided key is invalid: {}".format(
+                    json.dumps(key, indent=4)
+                )
             )
 
         return bool(self.db.get(key.get("eventId")))

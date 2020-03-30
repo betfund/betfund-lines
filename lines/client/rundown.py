@@ -49,7 +49,9 @@ class RundownClient(object):
             "x-rapidapi-key": self._api_key
         }
 
-        response = requests.get(url=request_url, headers=headers, params=params)
+        response = requests.get(
+            url=request_url, headers=headers, params=params
+        )
         response.raise_for_status()
 
         return LinesResponseFacade(response.json())

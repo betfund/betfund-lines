@@ -50,7 +50,11 @@ class TemporalToSnapshot(object):
         }
 
         if not all([key.get("eventId"), key.get("sportId")]):
-            raise ValueError("Malformed Key: {}".format(json.dumps(key, indent=4)))
+            raise ValueError(
+                "Malformed Key: {}".format(
+                    json.dumps(key, indent=4)
+                )
+            )
 
         data = {
             "eventDate": record.event_date,  # temporal element
