@@ -1,29 +1,34 @@
-"""Runner for BetFund Temporal Datastore."""
+"""Runner for `betfund-lines`."""
 import sys
 
 from lines.client import RundownClient
-from lines.snapshot import TemporalToSnapshot
-from lines.temporal import BetFundTemporalClient
+from lines.transformer import RundownTransformer
 
 
-def run(sport_id: int):  # pragma: no cover
+def run(sport_id: int):
     DEBUG = False  # DO NOT CHECK IN AS TRUE
     if DEBUG is True:
         sys.exit()
 
-    rdc = RundownClient()
-    lines = rdc.lines(sport_id=sport_id)
-
-    if not lines.events:
-        return None
-
-    ssc = TemporalToSnapshot()
-    tdsc = BetFundTemporalClient()
-
-    for line in lines.events:  # multiprocess here (later)
-        ss = ssc.generate(line)
-        tdsc.put_temporal(ss)
+    # rdc = RundownClient()
+    # lines = rdc.lines(sport_id=sport_id)
+    #
+    # if not lines.events:
+    #     return None
+    from lines.libs.facades import LinesResponseFacade
+    import json
+    with open("tests/testData/teste.json", "r") as d:
+        lines = LinesResponseFacade(json.loads(d.read()))
 
 
-if __name__ == "__main__":
-    run(sport_id=2)  # Client side call to lines by sport
+    ssc = RundownTransformer()
+    for line in lines.events:
+
+        data = ssc.generate(line)
+        print(data)
+        break
+
+    return ssc
+
+if __name__ == '__main__':
+    run(sport_id=2)

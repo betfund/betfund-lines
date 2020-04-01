@@ -39,19 +39,11 @@ class RundownClient(object):
         )
         request_url = self.base_url + url_extras
 
-        params = {
-            "include": ["all_periods", "scores"],
-            "offset": "0"
-        }
+        params = {"include": ["all_periods", "scores"], "offset": "0"}
 
-        headers = {
-            "x-rapidapi-host": self._api_host,
-            "x-rapidapi-key": self._api_key
-        }
+        headers = {"x-rapidapi-host": self._api_host, "x-rapidapi-key": self._api_key}
 
-        response = requests.get(
-            url=request_url, headers=headers, params=params
-        )
+        response = requests.get(url=request_url, headers=headers, params=params)
         response.raise_for_status()
 
         return LinesResponseFacade(response.json())

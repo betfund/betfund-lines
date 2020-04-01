@@ -1,0 +1,1660 @@
+{
+  "description": "temporalRecord.schema.json",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sportId": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "eventId",
+        "sportId"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "eventDate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "score": {
+          "type": "object",
+          "properties": {
+            "eventId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "eventStatus": {
+              "type": "string",
+              "minLength": 1
+            },
+            "scoreAway": {
+              "type": "number"
+            },
+            "scoreHome": {
+              "type": "number"
+            },
+            "winnerAway": {
+              "type": "number"
+            },
+            "winnerHome": {
+              "type": "number"
+            },
+            "scoreAwayByPeriod": {
+              "type": "array",
+              "items": {
+                "required": [],
+                "properties": {}
+              }
+            },
+            "scoreHomeByPeriod": {
+              "type": "array",
+              "items": {
+                "required": [],
+                "properties": {}
+              }
+            },
+            "venueName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "venueLocation": {
+              "type": "string",
+              "minLength": 1
+            },
+            "gameClock": {
+              "type": "number"
+            },
+            "displayClock": {
+              "type": "string",
+              "minLength": 1
+            },
+            "gamePeriod": {
+              "type": "number"
+            },
+            "broadcast": {
+              "type": "string",
+              "minLength": 1
+            },
+            "eventStatusDetail": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "eventId",
+            "eventStatus"
+          ]
+        },
+        "teams": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "required": [
+              "teamId",
+              "name"
+            ],
+            "properties": {
+              "teamId": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "mascot": {
+                "type": "string",
+                "minLength": 1
+              },
+              "abbreviation": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ranking": {
+                "type": "number"
+              },
+              "record": {
+                "type": "string",
+                "minLength": 1
+              },
+              "isAway": {
+                "type": "string",
+                "minLength": 1
+              },
+              "isHome": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "schedule": {
+          "type": "object",
+          "properties": {
+            "seasonType": {
+              "type": "string",
+              "minLength": 1
+            },
+            "seasonYear": {
+              "type": "number"
+            },
+            "week": {
+              "type": "number"
+            },
+            "weekName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "weekDetail": {
+              "type": "string",
+              "minLength": 1
+            },
+            "eventHeadline": {
+              "type": "string",
+              "minLength": 1
+            },
+            "eventName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "attendance": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "seasonType",
+            "seasonYear"
+          ]
+        },
+        "linePeriods": {
+          "type": "object",
+          "properties": {
+            "linePeriodNumber": {
+              "type": "object",
+              "properties": {
+                "periodFullGame": {
+                  "type": "object",
+                  "properties": {
+                    "lineId": {
+                      "type": "number"
+                    },
+                    "moneyline": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "moneylineAway": {
+                          "type": "number"
+                        },
+                        "moneylineAwayDelta": {
+                          "type": "number"
+                        },
+                        "moneylineHome": {
+                          "type": "number"
+                        },
+                        "moneylineHomeDelta": {
+                          "type": "number"
+                        },
+                        "moneylineDraw": {
+                          "type": "number"
+                        },
+                        "moneylineDrawDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "spread": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "pointSpreadAway": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHome": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoneyDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "total": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "totalOver": {
+                          "type": "number"
+                        },
+                        "totalOverDelta": {
+                          "type": "number"
+                        },
+                        "totalUnder": {
+                          "type": "number"
+                        },
+                        "totalUnderDelta": {
+                          "type": "number"
+                        },
+                        "totalOverMoney": {
+                          "type": "number"
+                        },
+                        "totalOverMoneyDelta": {
+                          "type": "number"
+                        },
+                        "totalUnderMoney": {
+                          "type": "number"
+                        },
+                        "totalUnderMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "affiliate": {
+                      "type": "object",
+                      "properties": {
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "affiliateName": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateUrl": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "affiliateId",
+                        "affiliateName",
+                        "affiliateUrl"
+                      ]
+                    },
+                    "periodDescription": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "lineId"
+                  ]
+                },
+                "periodFirstHalf": {
+                  "type": "object",
+                  "properties": {
+                    "lineId": {
+                      "type": "number"
+                    },
+                    "moneyline": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "moneylineAway": {
+                          "type": "number"
+                        },
+                        "moneylineAwayDelta": {
+                          "type": "number"
+                        },
+                        "moneylineHome": {
+                          "type": "number"
+                        },
+                        "moneylineHomeDelta": {
+                          "type": "number"
+                        },
+                        "moneylineDraw": {
+                          "type": "number"
+                        },
+                        "moneylineDrawDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "spread": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "pointSpreadAway": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHome": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoneyDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "total": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "totalOver": {
+                          "type": "number"
+                        },
+                        "totalOverDelta": {
+                          "type": "number"
+                        },
+                        "totalUnder": {
+                          "type": "number"
+                        },
+                        "totalUnderDelta": {
+                          "type": "number"
+                        },
+                        "totalOverMoney": {
+                          "type": "number"
+                        },
+                        "totalOverMoneyDelta": {
+                          "type": "number"
+                        },
+                        "totalUnderMoney": {
+                          "type": "number"
+                        },
+                        "totalUnderMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "affiliate": {
+                      "type": "object",
+                      "properties": {
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "affiliateName": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateUrl": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "affiliateId",
+                        "affiliateName",
+                        "affiliateUrl"
+                      ]
+                    },
+                    "periodId": {
+                      "type": "number"
+                    },
+                    "periodDescription": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "lineId"
+                  ]
+                },
+                "periodSecondHalf": {
+                  "type": "object",
+                  "properties": {
+                    "lineId": {
+                      "type": "number"
+                    },
+                    "moneyline": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "moneylineAway": {
+                          "type": "number"
+                        },
+                        "moneylineAwayDelta": {
+                          "type": "number"
+                        },
+                        "moneylineHome": {
+                          "type": "number"
+                        },
+                        "moneylineHomeDelta": {
+                          "type": "number"
+                        },
+                        "moneylineDraw": {
+                          "type": "number"
+                        },
+                        "moneylineDrawDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "spread": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "pointSpreadAway": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHome": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoneyDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "total": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "totalOver": {
+                          "type": "number"
+                        },
+                        "totalOverDelta": {
+                          "type": "number"
+                        },
+                        "totalUnder": {
+                          "type": "number"
+                        },
+                        "totalUnderDelta": {
+                          "type": "number"
+                        },
+                        "totalOverMoney": {
+                          "type": "number"
+                        },
+                        "totalOverMoneyDelta": {
+                          "type": "number"
+                        },
+                        "totalUnderMoney": {
+                          "type": "number"
+                        },
+                        "totalUnderMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "affiliate": {
+                      "type": "object",
+                      "properties": {
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "affiliateName": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateUrl": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "affiliateId",
+                        "affiliateName",
+                        "affiliateUrl"
+                      ]
+                    },
+                    "periodId": {
+                      "type": "number"
+                    },
+                    "periodDescription": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "lineId"
+                  ]
+                },
+                "periodFirstPeriod": {
+                  "type": "object",
+                  "properties": {
+                    "lineId": {
+                      "type": "number"
+                    },
+                    "moneyline": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "moneylineAway": {
+                          "type": "number"
+                        },
+                        "moneylineAwayDelta": {
+                          "type": "number"
+                        },
+                        "moneylineHome": {
+                          "type": "number"
+                        },
+                        "moneylineHomeDelta": {
+                          "type": "number"
+                        },
+                        "moneylineDraw": {
+                          "type": "number"
+                        },
+                        "moneylineDrawDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "spread": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "pointSpreadAway": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHome": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoneyDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "total": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "totalOver": {
+                          "type": "number"
+                        },
+                        "totalOverDelta": {
+                          "type": "number"
+                        },
+                        "totalUnder": {
+                          "type": "number"
+                        },
+                        "totalUnderDelta": {
+                          "type": "number"
+                        },
+                        "totalOverMoney": {
+                          "type": "number"
+                        },
+                        "totalOverMoneyDelta": {
+                          "type": "number"
+                        },
+                        "totalUnderMoney": {
+                          "type": "number"
+                        },
+                        "totalUnderMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "affiliate": {
+                      "type": "object",
+                      "properties": {
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "affiliateName": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateUrl": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "affiliateId",
+                        "affiliateName",
+                        "affiliateUrl"
+                      ]
+                    },
+                    "periodId": {
+                      "type": "number"
+                    },
+                    "periodDescription": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "lineId"
+                  ]
+                },
+                "periodSecondPeriod": {
+                  "type": "object",
+                  "properties": {
+                    "lineId": {
+                      "type": "number"
+                    },
+                    "moneyline": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "moneylineAway": {
+                          "type": "number"
+                        },
+                        "moneylineAwayDelta": {
+                          "type": "number"
+                        },
+                        "moneylineHome": {
+                          "type": "number"
+                        },
+                        "moneylineHomeDelta": {
+                          "type": "number"
+                        },
+                        "moneylineDraw": {
+                          "type": "number"
+                        },
+                        "moneylineDrawDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "spread": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "pointSpreadAway": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHome": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoneyDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "total": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "totalOver": {
+                          "type": "number"
+                        },
+                        "totalOverDelta": {
+                          "type": "number"
+                        },
+                        "totalUnder": {
+                          "type": "number"
+                        },
+                        "totalUnderDelta": {
+                          "type": "number"
+                        },
+                        "totalOverMoney": {
+                          "type": "number"
+                        },
+                        "totalOverMoneyDelta": {
+                          "type": "number"
+                        },
+                        "totalUnderMoney": {
+                          "type": "number"
+                        },
+                        "totalUnderMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "affiliate": {
+                      "type": "object",
+                      "properties": {
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "affiliateName": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateUrl": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "affiliateId",
+                        "affiliateName",
+                        "affiliateUrl"
+                      ]
+                    },
+                    "periodId": {
+                      "type": "number"
+                    },
+                    "periodDescription": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "lineId"
+                  ]
+                },
+                "periodThirdPeriod": {
+                  "type": "object",
+                  "properties": {
+                    "lineId": {
+                      "type": "number"
+                    },
+                    "moneyline": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "moneylineAway": {
+                          "type": "number"
+                        },
+                        "moneylineAwayDelta": {
+                          "type": "number"
+                        },
+                        "moneylineHome": {
+                          "type": "number"
+                        },
+                        "moneylineHomeDelta": {
+                          "type": "number"
+                        },
+                        "moneylineDraw": {
+                          "type": "number"
+                        },
+                        "moneylineDrawDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "spread": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "pointSpreadAway": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHome": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoneyDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "total": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "totalOver": {
+                          "type": "number"
+                        },
+                        "totalOverDelta": {
+                          "type": "number"
+                        },
+                        "totalUnder": {
+                          "type": "number"
+                        },
+                        "totalUnderDelta": {
+                          "type": "number"
+                        },
+                        "totalOverMoney": {
+                          "type": "number"
+                        },
+                        "totalOverMoneyDelta": {
+                          "type": "number"
+                        },
+                        "totalUnderMoney": {
+                          "type": "number"
+                        },
+                        "totalUnderMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "affiliate": {
+                      "type": "object",
+                      "properties": {
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "affiliateName": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateUrl": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "affiliateId",
+                        "affiliateName",
+                        "affiliateUrl"
+                      ]
+                    },
+                    "periodId": {
+                      "type": "number"
+                    },
+                    "periodDescription": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "lineId"
+                  ]
+                },
+                "periodFourthPeriod": {
+                  "type": "object",
+                  "properties": {
+                    "lineId": {
+                      "type": "number"
+                    },
+                    "moneyline": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "moneylineAway": {
+                          "type": "number"
+                        },
+                        "moneylineAwayDelta": {
+                          "type": "number"
+                        },
+                        "moneylineHome": {
+                          "type": "number"
+                        },
+                        "moneylineHomeDelta": {
+                          "type": "number"
+                        },
+                        "moneylineDraw": {
+                          "type": "number"
+                        },
+                        "moneylineDrawDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "spread": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "pointSpreadAway": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHome": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoneyDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "total": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "totalOver": {
+                          "type": "number"
+                        },
+                        "totalOverDelta": {
+                          "type": "number"
+                        },
+                        "totalUnder": {
+                          "type": "number"
+                        },
+                        "totalUnderDelta": {
+                          "type": "number"
+                        },
+                        "totalOverMoney": {
+                          "type": "number"
+                        },
+                        "totalOverMoneyDelta": {
+                          "type": "number"
+                        },
+                        "totalUnderMoney": {
+                          "type": "number"
+                        },
+                        "totalUnderMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "affiliate": {
+                      "type": "object",
+                      "properties": {
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "affiliateName": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateUrl": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "affiliateId",
+                        "affiliateName",
+                        "affiliateUrl"
+                      ]
+                    },
+                    "periodId": {
+                      "type": "number"
+                    },
+                    "periodDescription": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "lineId"
+                  ]
+                },
+                "periodLiveFullGame": {
+                  "type": "object",
+                  "properties": {
+                    "lineId": {
+                      "type": "number"
+                    },
+                    "moneyline": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "moneylineAway": {
+                          "type": "number"
+                        },
+                        "moneylineAwayDelta": {
+                          "type": "number"
+                        },
+                        "moneylineHome": {
+                          "type": "number"
+                        },
+                        "moneylineHomeDelta": {
+                          "type": "number"
+                        },
+                        "moneylineDraw": {
+                          "type": "number"
+                        },
+                        "moneylineDrawDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "spread": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "pointSpreadAway": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHome": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadAwayMoneyDelta": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoney": {
+                          "type": "number"
+                        },
+                        "pointSpreadHomeMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "total": {
+                      "type": "object",
+                      "properties": {
+                        "lineId": {
+                          "type": "number"
+                        },
+                        "eventId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "totalOver": {
+                          "type": "number"
+                        },
+                        "totalOverDelta": {
+                          "type": "number"
+                        },
+                        "totalUnder": {
+                          "type": "number"
+                        },
+                        "totalUnderDelta": {
+                          "type": "number"
+                        },
+                        "totalOverMoney": {
+                          "type": "number"
+                        },
+                        "totalOverMoneyDelta": {
+                          "type": "number"
+                        },
+                        "totalUnderMoney": {
+                          "type": "number"
+                        },
+                        "totalUnderMoneyDelta": {
+                          "type": "number"
+                        },
+                        "dateUpdated": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "format": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "lineId",
+                        "eventId",
+                        "dateUpdated"
+                      ]
+                    },
+                    "affiliate": {
+                      "type": "object",
+                      "properties": {
+                        "affiliateId": {
+                          "type": "number"
+                        },
+                        "affiliateName": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "affiliateUrl": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "affiliateId",
+                        "affiliateName",
+                        "affiliateUrl"
+                      ]
+                    },
+                    "periodId": {
+                      "type": "number"
+                    },
+                    "periodDescription": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "lineId"
+                  ]
+                }
+              },
+              "required": [
+                "periodFullGame",
+                "periodFirstHalf",
+                "periodSecondHalf",
+                "periodFirstPeriod",
+                "periodSecondPeriod",
+                "periodThirdPeriod",
+                "periodFourthPeriod",
+                "periodLiveFullGame"
+              ]
+            }
+          },
+          "required": [
+            "linePeriodNumber"
+          ]
+        }
+      },
+      "required": [
+        "eventDate",
+        "score",
+        "teams",
+        "schedule",
+        "linePeriods"
+      ]
+    }
+  },
+  "required": [
+    "key",
+    "data"
+  ]
+}

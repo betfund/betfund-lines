@@ -26,6 +26,8 @@ setup(
     keywords="betfund lines bet",
     packages=find_packages(),
     install_requires=[
+        "kafka-python",
+        "prefect",
         "requests",
     ],
     extras_require={
