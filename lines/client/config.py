@@ -2,7 +2,16 @@
 from enum import Enum
 
 
-class RundownSportId(Enum):
+class ExtendedEnum(Enum):
+    """ExtendedEnum delegation.."""
+
+    @classmethod
+    def list(cls):
+        """List ExtendedEnum for Enum."""
+        return list(map(lambda c: c.value, cls))
+
+
+class RundownSportId(ExtendedEnum):
     """Sport ID Enumeration."""
 
     NCAAF = 1

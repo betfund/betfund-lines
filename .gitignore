@@ -74,6 +74,9 @@ docs/_build/
 # PyBuilder
 target/
 
+# Dask
+dask-worker-space/
+
 # Jupyter Notebook
 .ipynb_checkpoints
 

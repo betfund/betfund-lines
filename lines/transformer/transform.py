@@ -8,7 +8,7 @@ Generator of temporal records for `lines.producer.creator`
     NOTE: this must contain an temporal element
     in this case the field: "event_date" from API response
 
-    "event_date": "2020-02-02T23:30:00Z" is referenced as temporal element
+    "timestamp": "2020-02-02T23:30:00Z" is referenced as temporal element
 
     {
         "key": {
@@ -16,41 +16,54 @@ Generator of temporal records for `lines.producer.creator`
             "sportId": 2  # integer
         },
         "data": {
-            "eventDate": "2020-02-02T23:30:00Z"",
+            "timestamp": "2020-02-01T17:22:12Z",
+            "eventDate": "2020-02-02T23:30:00Z",
             ...
         }
     }
 """
+import datetime
 import json
-from lines.libs.facades import LinesEventFacade
-
 from typing import Union
 
+from prefect import Task
 
-class RundownTransformer(object):
+from lines.libs.facades import LinesEventFacade
+from lines.libs.errors import MalformedKeyError
+
+
+class RundownTransformer(Task):
     """RundownTransformer object."""
 
     def __init__(self):
         """Constructor for RundownTransformer."""
         self.log_level = "INFO"
+        super().__init__()
 
-    def generate(self, record: LinesEventFacade) -> Union[dict, None]:
+    def run(self, record):
+        lines = self._generate(record=record)
+
+        return lines
+
+    @staticmethod
+    def _generate(record: LinesEventFacade) -> Union[dict, None]:
         """
         Generate temporal record for data store.
 
         Args:
             record: (LinesEventFacade) - input to generate temporal record for
         Returns:
-            temporal_record: (dict) - schema conforming record
+            transformed: (dict) - schema conforming record
             NOTE: raises ValueError for malformed `key`
         """
-        temporal_record = {
+        transformed = {
             "key": {
                 "eventId": record.event_id,
                 "sportId": record.sport_id
             },
             "data": {
-                "eventDate": record.event_date,  # temporal element
+                "eventDate": record.event_date,
+                "timestamp": str(datetime.datetime.now()),  # temporal element
                 "score": record.score,
                 "teams": record.teams_normalized,
                 "schedule": record.schedule,
@@ -59,10 +72,10 @@ class RundownTransformer(object):
         }
 
         if not all([record.event_id, record.sport_id]):
-            raise ValueError(
-                "Malformed Key: {}".format(
-                    json.dumps(temporal_record.get("key"), indent=4)
+            raise MalformedKeyError(
+                "Invalid Key: {}".format(
+                    json.dumps(transformed.get("key"), indent=4)
                 )
             )
 
-        return temporal_record
+        return transformed
