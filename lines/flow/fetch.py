@@ -9,6 +9,7 @@ from prefect.schedules import IntervalSchedule  # noqa: F403, F401
 from prefect.utilities.debug import raise_on_exception  # noqa: F403, F401
 
 from lines.client.rundown import Rundown
+from lines.producer.sender import KafkaProducer
 from lines.transformer.transform import RundownTransformer
 
 
@@ -16,16 +17,21 @@ def build(sport: int) -> Flow:
     """Build flow via imperative API."""
     rdc = Rundown()
     rtc = RundownTransformer()
+    kpdr = KafkaProducer()
 
     with Flow("betfund-lines") as flow:
         sport = Parameter("sport")
 
         flow.set_dependencies(
-            rdc, keyword_tasks=(dict(sport=sport))
+            task=rdc, keyword_tasks=(dict(sport=sport))
         )
 
         flow.set_dependencies(
-            task=rtc, mapped=True, keyword_tasks=dict(record=(rdc, []))
+            task=rtc, mapped=True, keyword_tasks=dict(record=(rdc))
+        )
+
+        flow.set_dependencies(
+            task=kpdr, mapped=True, keyword_tasks=dict(record=(rtc))
         )
 
     return flow
@@ -55,6 +61,3 @@ def lines(sport: int) -> State:
     )
 
     return lines_state.serialize()
-
-if __name__ == '__main__':
-    lines(2)

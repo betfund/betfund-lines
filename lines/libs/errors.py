@@ -14,3 +14,13 @@ class InvalidSportIdError(BetFundLinesError):
 class MalformedKeyError(BetFundLinesError):
     """MalformedKey Error Delegation."""
     pass
+
+
+class MalformedPayloadError(BetFundLinesError):
+    """MalformedPayload Error Delegation."""
+    pass
+
+
+class UnknownError(BetFundLinesError):
+    """WHaT iS gOiNg oN!@!@?!?"""
+    pass

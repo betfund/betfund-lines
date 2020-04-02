@@ -3,35 +3,35 @@ import json
 import os
 
 from kafka import KafkaProducer
+from prefect import Task
+
+from lines.libs.errors import MalformedPayloadError
 
 
-class EventProducer(object):
+class EventProducer(Task):
     """Event Producer Object."""
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         self._server = os.getenv("KAFKA_BOOTSTRAP_SERVER")  # temporary
         self._topic = os.getenv("KAFKA_TOPIC")
+        super().__init__(*args, **kwargs)
 
-    def send(self, record: dict):
+    def run(self, record: dict):
         """Implements `KafkaProducer.send(...)`."""
         if not isinstance(record, dict):
-            raise ValueError
+            raise MalformedPayloadError(
+                "Invalid Payload: {}".format(
+                    json.dumps(record, indent=4)
+                )
+            )
 
         producer = self._build_producer()
-
-        # TODO: Error handling and logging
 
         response = producer.send(
             topic=self._topic, value=record
         )
 
         return response
-
-    def metrics(self):
-        """Fetch Metrics of Producer."""
-        producer = self._build_producer()
-
-        return producer.metrics()
 
     def _build_producer(self):
         """Builder of KafkaProducer."""

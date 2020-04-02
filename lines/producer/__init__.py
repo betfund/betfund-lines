@@ -1,4 +1,4 @@
 """BetFund client.pub namespace."""
-from .creator import EventProducer
+from .sender import KafkaProducer
 
-__all__ = ["EventProducer"]
+__all__ = ["KafkaProducer"]
