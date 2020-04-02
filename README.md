@@ -16,15 +16,15 @@ $ pip install -e ".[testing]"
 
 ## Environment Variables
 
-+ RUNDOWN_API_HOST
++ RUNDOWN_HOST
     + `$ export RUNDOWN_API_HOST=yourHost`
     
     
-+ RUNDOWN_API_KEY
++ RUNDOWN_KEY
     + `$ export RUNDOWN_API_KEY=yourSecretKey`
 
 
 ## Calling Client
-The main runner is via `lines.main`
+~The main runner is via `lines.main`~
 
-A caller will need to pass an argument `sport_id`
+~A caller will need to pass an argument `sport_id`~

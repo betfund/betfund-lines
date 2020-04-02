@@ -1,4 +1,4 @@
-"""Unit tests for `lines.snapshot` modules."""
+"""Unit tests for `lines.transformer` modules."""
 import pytest
 
 from unittest import TestCase

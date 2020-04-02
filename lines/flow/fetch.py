@@ -31,10 +31,6 @@ def build(sport: int) -> Flow:
 
 def execute(flow: Flow, sport: int) -> State:
     """Execute `betfund-lines` flow build in `_build(...)`."""
-
-    # with raise_on_exception():
-    #     executor = DaskExecutor(address=client.scheduler.address)
-
     records = flow.run(
         sport=sport
     )
