@@ -24,17 +24,17 @@ class TestRundownTransformer(TestCase):
         """Unit test for `RundownTransformer.__init__(...)` success."""
         assert self.test_transformer.log_level == "INFO"
 
-    def test_generate(self):
-        """Unit test for `RundownTransformer._generate(...)` success."""
-        result = self.test_transformer._generate(
+    def test_run(self):
+        """Unit test for `RundownTransformer._run(...)` success."""
+        result = self.test_transformer.run(
             record=self.line_event
         )
 
         assert isinstance(result, dict)
 
-    def test_generate_raises(self):
-        """Unit test for `RundownTransformer._generate(...)` raises."""
+    def test_run_raises(self):
+        """Unit test for `RundownTransformer._run(...)` raises."""
         with pytest.raises(MalformedKeyError):
-            self.test_transformer._generate(
-                record=LinesEventFacade({})
+            self.test_transformer.run(
+                record=LinesEventFacade({"key": {}})
             )

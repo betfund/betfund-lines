@@ -40,13 +40,7 @@ class RundownTransformer(Task):
         self.log_level = "INFO"
         super().__init__()
 
-    def run(self, record):
-        lines = self._generate(record=record)
-
-        return lines
-
-    @staticmethod
-    def _generate(record: LinesEventFacade) -> Union[dict, None]:
+    def run(self, record: LinesEventFacade) -> Union[dict, None]:
         """
         Generate temporal record for data store.
 
@@ -56,6 +50,9 @@ class RundownTransformer(Task):
             transformed: (dict) - schema conforming record
             NOTE: raises ValueError for malformed `key`
         """
+        if not record:
+            return dict()
+
         transformed = {
             "key": {
                 "eventId": record.event_id,

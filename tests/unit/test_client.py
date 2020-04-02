@@ -1,5 +1,4 @@
 """Unit tests for `lines.client` modules."""
-import datetime
 import mock
 import pytest
 import requests
@@ -27,20 +26,18 @@ class TestRundown(TestCase):
         assert self.test_client.rundown_key == "you-will-never-guess"
 
     @mock.patch.object(requests, "get")
-    def test_fetch(self, mock_rundown_resp):
-        """Unit test for `Rundown._fetch(...)` success."""
+    def test_run(self, mock_rundown_resp):
+        """Unit test for `Rundown._run(...)` success."""
         mock_rundown_resp.return_value = MockRequestsResponse(
             filepath="testData/nfl-week-three.json"
         )
 
-        response = self.test_client._fetch(sport=2)
+        response = self.test_client.run(sport=2)
 
-        assert isinstance(response, dict)
-        assert isinstance(response.events, list)
-        assert isinstance(response.meta, dict)
-        assert len(response.events) == 13
+        assert isinstance(response, list)
+        assert len(response) == 13
 
-    def test_fetch_raises(self):
-        """Unit test for `Rundown._fetch(...)` raises."""
+    def test_run_raises(self):
+        """Unit test for `Rundown._run(...)` raises."""
         with pytest.raises(InvalidSportIdError):
-            self.test_client._fetch(sport=12093)
+            self.test_client.run(sport=12093)

@@ -1,5 +1,6 @@
 """Client for TheRundown API."""
 import datetime
+import logging
 import os
 import requests
 
@@ -8,6 +9,9 @@ from prefect import Task
 from lines.client.config import RundownSportId
 from lines.libs.errors import InvalidSportIdError
 from lines.libs.facades import LinesResponseFacade
+
+logging.basicConfig(level="INFO")
+_LOGGER = logging.getLogger(__name__)
 
 
 class Rundown(Task):
@@ -25,20 +29,14 @@ class Rundown(Task):
         lines: (LinesResponseFacade) - facade of response object `.json()`
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Constructor for Rundown"""
-        self.base_url = "https://therundown-therundown-v1.p.rapidapi.com/"
+        self.base_url = "https://therundown-therundown-v1.p.rapidapi.com"
         self.rundown_host = os.getenv("RUNDOWN_HOST")
         self.rundown_key = os.getenv("RUNDOWN_KEY")
-        super().__init__()
+        super().__init__(*args, **kwargs)
 
-    def run(self, sport) -> LinesResponseFacade:
-        """Runner for Task."""
-        lines = self._fetch(sport=sport)
-
-        return lines
-
-    def _fetch(self, sport) -> LinesResponseFacade:
+    def run(self, sport: int) -> LinesResponseFacade:
         """
         Fetch live lines via TheRundown.
 
@@ -56,11 +54,15 @@ class Rundown(Task):
             )
 
         now = datetime.datetime.now()
-        url_extras = "sports/{}/events/{}".format(
-            str(sport), now.strftime("%Y-%m-%d")
+        request_url = "{}/sports/{}/events/{}".format(
+            self.base_url, str(sport), now.strftime("%Y-%m-%d")
         )
 
-        request_url = self.base_url + url_extras
+        _LOGGER.info(
+            "<URL BUILT> {}".format(
+                request_url
+            )
+        )
 
         params = {
             "include": [
@@ -84,4 +86,4 @@ class Rundown(Task):
             response.json()
         )
 
-        return lines
+        return lines.events

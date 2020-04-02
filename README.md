@@ -9,9 +9,6 @@ $ cd betfund-lines
 
 $ python3.7 -m venv venv
 $ pip install -e .
-
-# For test dependencies
-$ pip install -e ".[testing]"
 ```
 
 ## Environment Variables
@@ -23,8 +20,10 @@ $ pip install -e ".[testing]"
 + RUNDOWN_KEY
     + `$ export RUNDOWN_API_KEY=yourSecretKey`
 
+## Testing
+```bash
+# For test dependencies
+$ pip install -e ".[testing]"
 
-## Calling Client
-~The main runner is via `lines.main`~
-
-~A caller will need to pass an argument `sport_id`~
+$ make tests
+```

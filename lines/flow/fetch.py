@@ -20,10 +20,12 @@ def build(sport: int) -> Flow:
     with Flow("betfund-lines") as flow:
         sport = Parameter("sport")
 
-        lines = rdc(sport)
+        flow.set_dependencies(
+            rdc, keyword_tasks=(dict(sport=sport))
+        )
 
-        rtc.map(
-            record=lines
+        flow.set_dependencies(
+            task=rtc, mapped=True, keyword_tasks=dict(record=(rdc, []))
         )
 
     return flow
@@ -53,3 +55,6 @@ def lines(sport: int) -> State:
     )
 
     return lines_state.serialize()
+
+if __name__ == '__main__':
+    lines(2)
