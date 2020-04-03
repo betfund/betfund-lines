@@ -20,10 +20,6 @@ class TestRundownTransformer(TestCase):
         self.line_event = LinesEventFacade(self.resp.get("events")[0])
         self.test_transformer = RundownTransformer()
 
-    def test_constructor(self):
-        """Unit test for `RundownTransformer.__init__(...)` success."""
-        assert self.test_transformer.log_level == "INFO"
-
     def test_run(self):
         """Unit test for `RundownTransformer._run(...)` success."""
         result = self.test_transformer.run(

@@ -3,16 +3,21 @@ from enum import Enum
 
 
 class ExtendedEnum(Enum):
-    """ExtendedEnum delegation.."""
+    """ExtendedEnum delegation."""
 
     @classmethod
     def list(cls):
-        """List ExtendedEnum for Enum."""
+        """Interface to provide all allowed values for a RundownSportId. """
         return list(map(lambda c: c.value, cls))
 
 
 class RundownSportId(ExtendedEnum):
-    """Sport ID Enumeration."""
+    """
+    Sport ID Enumeration.
+
+    Integer values are assigned the TheRundown.
+    RundownSportId is for easy access as well as display for Exceptions
+    """
 
     NCAAF = 1
     NFL = 2
