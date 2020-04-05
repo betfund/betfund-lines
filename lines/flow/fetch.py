@@ -1,15 +1,24 @@
-"""Flow builder."""
+"""Prefect Flow Builder."""
+import os
+
+from datetime import timedelta
+
 from prefect import Flow, Parameter
 from prefect.engine.state import State
+from prefect.schedules import Schedule
+from prefect.schedules.clocks import IntervalClock
 
 from lines.client.rundown import Rundown
-from lines.producer.sender import KafkaProducer
+from lines.producer.sender import EventProducer
 from lines.transformer.transform import RundownTransformer
 
 
 def build(sport: int) -> Flow:
     """
     Build flow via imperative API.
+
+    `schedule` - is an IntervalClock Prefect schedule
+    This is defined by an arbitrary timedelta
 
     Args:
         sport (int): sportId for TheRundownAPI request.
@@ -21,11 +30,19 @@ def build(sport: int) -> Flow:
             RundownTransformer(Task)
             KafkaProducer(Task)
     """
+    schedule = Schedule(
+        clocks=[
+            IntervalClock(interval=timedelta(
+                hours=os.getenv("PREFECT_INTERVAL"))
+            )
+        ]
+    )
+
     rundown_client = Rundown()
     rundown_transformer = RundownTransformer()
-    kafka_proucer = KafkaProducer()
+    kafka_producer = EventProducer()
 
-    with Flow("betfund-lines") as flow:
+    with Flow("betfund-lines-flow") as flow:
         sport = Parameter("sport")
 
         # Using Prefect's Imperative API
@@ -33,18 +50,22 @@ def build(sport: int) -> Flow:
         # A `keyword_task` is a result of a task...
         # ...that is a dependency of the `task`
 
+        flow.schedule = schedule
         flow.set_dependencies(
-            task=rundown_client, keyword_tasks=(dict(sport=sport))
+            task=rundown_client,
+            keyword_tasks=(dict(sport=sport))
         )
         flow.set_dependencies(
             task=rundown_transformer,
             mapped=True,
-            keyword_tasks=dict(record=(rundown_client))
+            keyword_tasks=dict(record=rundown_client),
+            upstream_tasks=[rundown_client],
         )
         flow.set_dependencies(
-            task=kafka_proucer,
+            task=kafka_producer,
             mapped=True,
-            keyword_tasks=dict(record=(rundown_transformer))
+            keyword_tasks=dict(record=rundown_transformer),
+            upstream_tasks=[rundown_transformer],
         )
 
     return flow
@@ -62,7 +83,7 @@ def execute(flow: Flow, sport: int) -> State:
         flow_state (State): state of completed Prefect `Flow`
     """
     flow_state = flow.run(
-        sport=sport
+        sport=sport, run_on_schedule=True
     )
 
     return flow_state
@@ -78,8 +99,6 @@ def lines(sport: int) -> State:
         lines_state (state): state of `betfund-lines` flow
     """
     flow = build(sport=sport)
-    lines_state = execute(
-        flow=flow, sport=sport
-    )
+    lines_state = execute(flow=flow, sport=sport)
 
     return lines_state.serialize()
