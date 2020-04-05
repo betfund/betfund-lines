@@ -41,16 +41,12 @@ class EventProducer(Task):
         """
         if not isinstance(record, dict):
             raise MalformedPayloadError(
-                "Invalid Payload: {}".format(
-                    json.dumps(record, indent=4)
-                )
+                "Invalid Payload: {}".format(json.dumps(record, indent=4))
             )
 
         producer = self._build_producer()
 
-        response = producer.send(
-            topic=self.topic, value=record
-        )
+        response = producer.send(topic=self.topic, value=record)
 
         return response
 
@@ -63,9 +59,7 @@ class EventProducer(Task):
         """
         producer = KafkaProducer(
             bootstrap_servers=self.server,
-            value_serializer=(
-                lambda mes: json.dumps(mes).encode("utf-8")
-            ),
+            value_serializer=(lambda mes: json.dumps(mes).encode("utf-8")),
         )
 
         return producer

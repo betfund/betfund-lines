@@ -24,6 +24,7 @@ Generator of temporal records for `lines.producer.creator`
 """
 import datetime
 import json
+
 from typing import Union
 
 from prefect import Task
